@@ -8,33 +8,25 @@ using Rema1000ApiProject.Models;
 using Rema1000ApiProject.Services;
 
 namespace Rema1000ApiProject.Controllers{
-    ///<summary>Controller responsible for handling products </summary>
+    ///<summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
     [ApiController]
     [Route("api/[controller]")]
     //[Route("[action]")]
-    public class ProductController : ControllerBase{
-        IService<Product> _service;
-        public ProductController(IService<Product> service){
+    public class ProductTypesController : ControllerBase{
+        IService<ProductType> _service;
+        public ProductTypesController(IService<ProductType> service){
             _service = service;
         }
-
-        ///<summary>Gets the information on the product of a given name</summary>
-        ///<returns>Returns a json representation of a Product</returns>
-        [HttpGet("{id}")]
-        public ActionResult<Product> GetProduct(Guid id){
-            //throw new NotImplementedException();
-            return Ok(_service.Read(id));
-        }
-        ///<summary>Gets the all products of a given type</summary>
-        ///<returns>Returns a collection of all Products of the given type</returns>
-        [HttpGet("type/{type}")]
-        public IEnumerable<Product> GetProductsByType(ProductType type){
+        ///<summary>Gets the information on the Category of a given name</summary>
+        ///<returns>Returns a json representation of a Category</returns>
+        [HttpGet]
+        public IEnumerable<ProductType> GetProductTypes(){
             throw new NotImplementedException();
         }
         /// <summary> This POST method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPost]
-        public Product AddNewProduct(Product product)
+        public ProductType AddNewProductType(ProductType productType)
         {
             /*_service.CreateMakerSpace(createDto);
             //Check if valid
@@ -44,7 +36,7 @@ namespace Rema1000ApiProject.Controllers{
         ///<summary> This PUT method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPut("{id}")]
-        public ActionResult UpdateProduct(Guid id, Product product)
+        public ActionResult UpdateProductType(Guid id, ProductType productType)
         {
             /*if (_service.UpdateMakerSpace(id, MakerSpaceCreateDto) == false)
             {
@@ -57,7 +49,7 @@ namespace Rema1000ApiProject.Controllers{
         /// <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpDelete("{id}")]
-        public ActionResult DeleteProduct(Guid id)
+        public ActionResult DeleteProductType(Guid id)
         {
             /*if (_service.DeleteMakerSpace(id) == false)
             {

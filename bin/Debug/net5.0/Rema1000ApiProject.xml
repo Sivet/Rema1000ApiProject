@@ -4,38 +4,22 @@
         <name>Rema1000ApiProject</name>
     </assembly>
     <members>
-        <member name="T:Rema1000ApiProject.Controllers.CategoryController">
+        <member name="T:Rema1000ApiProject.Controllers.CategoriesController">
             <summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.GetCategories">
+        <member name="M:Rema1000ApiProject.Controllers.CategoriesController.GetCategories">
             <summary>Gets the information on the Category of a given name</summary>
             <returns>Returns a json representation of a Category</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.AddNewCategory(Rema1000ApiProject.Models.Category)">
+        <member name="M:Rema1000ApiProject.Controllers.CategoriesController.AddNewCategory(Rema1000ApiProject.Models.Category)">
             <summary> This POST method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.UpdateCategory(System.Guid,Rema1000ApiProject.Models.Category)">
+        <member name="M:Rema1000ApiProject.Controllers.CategoriesController.UpdateCategory(System.Guid,Rema1000ApiProject.Models.Category)">
             <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
              <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.DeleteCategory(System.Guid)">
-            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.GetProductTypes">
-            <summary>Gets the information on the Category of a given name</summary>
-            <returns>Returns a json representation of a Category</returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.AddNewProductType(Rema1000ApiProject.Models.ProductType)">
-            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.UpdateProductType(System.Guid,Rema1000ApiProject.Models.ProductType)">
-            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-             <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.CategoryController.DeleteProductType(System.Guid)">
+        <member name="M:Rema1000ApiProject.Controllers.CategoriesController.DeleteCategory(System.Guid)">
             <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
@@ -59,6 +43,25 @@
              <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductController.DeleteProduct(System.Guid)">
+            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
+            <returns>returns IS NOT YET IMPLEMENTED </returns>
+        </member>
+        <member name="T:Rema1000ApiProject.Controllers.ProductTypesController">
+            <summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.GetProductTypes">
+            <summary>Gets the information on the Category of a given name</summary>
+            <returns>Returns a json representation of a Category</returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.AddNewProductType(Rema1000ApiProject.Models.ProductType)">
+            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
+            <returns>returns IS NOT YET IMPLEMENTED </returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.UpdateProductType(System.Guid,Rema1000ApiProject.Models.ProductType)">
+            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
+             <returns>returns IS NOT YET IMPLEMENTED </returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.DeleteProductType(System.Guid)">
             <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>

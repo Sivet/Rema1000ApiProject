@@ -10,11 +10,11 @@ using Rema1000ApiProject.Services;
 namespace Rema1000ApiProject.Controllers{
     ///<summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
     [ApiController]
-    //[Route("api/[controller]")]
-    [Route("[action]")]
-    public class CategoryController : ControllerBase{
-        IService _service;
-        public CategoryController(IService service){
+    [Route("api/[controller]")]
+    //[Route("[action]")]
+    public class CategoriesController : ControllerBase{
+        IService<Category> _service;
+        public CategoriesController(IService<Category> service){
             _service = service;
         }
 
@@ -51,47 +51,6 @@ namespace Rema1000ApiProject.Controllers{
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpDelete("{id}")]
         public ActionResult DeleteCategory(Guid id)
-        {
-            /*if (_service.DeleteMakerSpace(id) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
-        }
-        ///<summary>Gets the information on the Category of a given name</summary>
-        ///<returns>Returns a json representation of a Category</returns>
-        [HttpGet]
-        public IEnumerable<ProductType> GetProductTypes(){
-            throw new NotImplementedException();
-        }
-        /// <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
-        [HttpPost]
-        public ProductType AddNewProductType(ProductType productType)
-        {
-            /*_service.CreateMakerSpace(createDto);
-            //Check if valid
-            return Created($"api/MakerSpaces", null);//CreatedAtRoute(nameof(GetMakerSpaceById), new { Id = makerSpaceReadDto.Id }, makerSpaceReadDto);*/
-            throw new NotImplementedException();
-        }
-        ///<summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
-        [HttpPut("{id}")]
-        public ActionResult UpdateProductType(Guid id, ProductType productType)
-        {
-            /*if (_service.UpdateMakerSpace(id, MakerSpaceCreateDto) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
-        }
-
-        /// <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
-        [HttpDelete("{id}")]
-        public ActionResult DeleteProductType(Guid id)
         {
             /*if (_service.DeleteMakerSpace(id) == false)
             {

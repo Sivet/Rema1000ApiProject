@@ -8,26 +8,27 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Rema1000ApiProject.Services{
-    public class SupplierSqlService : IService<Supplier>{
+    public class ProductTypeSqlService : IService<ProductType>{
         private readonly Rema1000Context _context;
 
-        public SupplierSqlService(Rema1000Context context){
+        public ProductTypeSqlService(Rema1000Context context){
             _context = context;
         }
 
-        public void Create(Supplier item)
+        public void Create(ProductType item)
         {
             throw new NotImplementedException();
         }
-        public void Update(Guid id, Supplier item)
+        public void Update(Guid id, ProductType item)
         {
             throw new NotImplementedException();
         }
-        public Supplier Read(Guid id)
+        public ProductType Read(Guid id)
         {
-            Supplier myObject = new Supplier();
-            myObject.SupplierID = id;
-            myObject.SupplierName = "Test String";
+            ProductType myObject = new ProductType();
+            myObject.ProductTypeID = id;
+            myObject.ProductTypeName = "Test String";
+            myObject.ProductTypeDescription = "Test Description";
             return myObject;
         }
         public void Delete(Guid id)

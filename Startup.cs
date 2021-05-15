@@ -6,11 +6,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Rema1000ApiProject.Context;
+using Rema1000ApiProject.Models;
+using Rema1000ApiProject.Services;
 
 namespace Rema1000ApiProject
 {
@@ -26,8 +30,13 @@ namespace Rema1000ApiProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddDbContext<Rema1000Context>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IService<Category>, CategorySqlService>();
+            services.AddScoped<IService<ProductType>, ProductTypeSqlService>();
+            services.AddScoped<IService<Product>, ProductSqlService>();
+            services.AddScoped<IService<Supplier>, SupplierSqlService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rema1000ApiProject", Version = "v1" });

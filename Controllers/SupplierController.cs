@@ -10,11 +10,11 @@ using Rema1000ApiProject.Services;
 namespace Rema1000ApiProject.Controllers{
     ///<summary>Controller responsible for handling Suppliers </summary>
     [ApiController]
-    //[Route("api/[controller]")]
-    [Route("[action]")]
+    [Route("api/[controller]")]
+    //[Route("[action]")]
     public class SupplierController : ControllerBase{
-        IService _service;
-        public SupplierController(IService service){
+        IService<Supplier> _service;
+        public SupplierController(IService<Supplier> service){
             _service = service;
         }
 
