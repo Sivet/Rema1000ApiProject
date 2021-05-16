@@ -44,7 +44,6 @@ namespace Rema1000ApiProject.Controllers{
             if(!_service.Update(id, category)) return NotFound();
             return NoContent();
         }
-
         /// <summary> This DELETE method deletes the product with the given id </summary>
         /// <returns>returns true on success </returns>
         [HttpDelete("{id}")]

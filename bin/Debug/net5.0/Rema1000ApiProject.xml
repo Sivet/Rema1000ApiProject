@@ -12,7 +12,7 @@
             <returns>Returns a collection of all Categories</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.GetChildCategories(System.Guid)">
-            <remark>Gets the children of a Category, if given 0'ed (00000000-0000-0000-0000-000000000000) Guid will find top parents</remark>
+            <summary>Gets the children of a Category, if given 0'ed (00000000-0000-0000-0000-000000000000) Guid will find top parents</summary>
             <returns>Returns a collection of Categories</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.AddNewCategory(Rema1000ApiProject.Models.Category)">
