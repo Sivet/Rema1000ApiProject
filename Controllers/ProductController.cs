@@ -11,52 +11,43 @@ namespace Rema1000ApiProject.Controllers{
     ///<summary>Controller responsible for handling products </summary>
     [ApiController]
     [Route("api/[controller]")]
-    //[Route("[action]")]
     public class ProductsController : ControllerBase{
         IService<Product> _service;
-        IProduct _productService;
-        public ProductsController(IService<Product> service, IProduct productService){
+        ICategoryRead<Product> _categoryReadService;
+        public ProductsController(IService<Product> service, ICategoryRead<Product> categoryReadService){
             _service = service;
-            _productService = productService;
+            _categoryReadService = categoryReadService;
         }
 
         ///<summary>Gets the information on the product of a given name</summary>
-        ///<returns>Returns a json representation of a Product</returns>
+        ///<returns>Returns a Product</returns>
         [HttpGet("{id}")]
         public ActionResult<Product> GetProduct(Guid id){
-            //throw new NotImplementedException();
             return Ok(_service.Read(id));
         }
-        ///<summary>Gets the all products of the given ProductType</summary>
+        ///<summary>Gets the all products of the given Category</summary>
         ///<returns>Returns a collection of Products</returns>
-        [HttpGet("category/{type}")]
-        public ActionResult<IEnumerable<Product>> GetProductsByCategory(string categoryName){
-            //throw new NotImplementedException();
-            return Ok(_productService.Read(categoryName));
+        [HttpGet("category/{id}")]
+        public ActionResult<IEnumerable<Product>> GetProductsByCategory(Guid id){
+            return Ok(_categoryReadService.ReadByCatogry(id));
         }
-        /// <summary> This POST method creates a new Product </summary>
+        /// <summary>This POST method creates a new Product </summary>
         /// <returns>returns the created product on success </returns>
         [HttpPost]
-        public ActionResult<Product> AddNewProduct(Product product)
-        {
-            //throw new NotImplementedException();
+        public ActionResult<Product> AddNewProduct(Product product){
             return Ok(_service.Create(product));
         }
-        ///<summary> This PUT method updates the product with the given id </summary>
+        ///<summary>This PUT method updates the product with the given id </summary>
         /// <returns>returns true on success </returns>
         [HttpPut("{id}")]
-        public ActionResult UpdateProduct(Guid id, Product product)
-        {
-            //throw new NotImplementedException();
+        public ActionResult UpdateProduct(Guid id, Product product){
             if(!_service.Update(id, product)) return NotFound();
             return NoContent();
         }
-        /// <summary> This DELETE method deletes the product with the given id </summary>
+        /// <summary>This DELETE method deletes the product with the given id </summary>
         /// <returns>returns true on success </returns>
         [HttpDelete("{id}")]
-        public ActionResult DeleteProduct(Guid id)
-        {
-            //throw new NotImplementedException();
+        public ActionResult DeleteProduct(Guid id){
             if(!_service.Delete(id)) return NotFound();
             return NoContent();
         }

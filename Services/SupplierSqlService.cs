@@ -16,13 +16,11 @@ namespace Rema1000ApiProject.Services{
             _context = context;
         }
 
-        public Supplier Create(Supplier item)
-        {
+        public Supplier Create(Supplier item){
             _mockDb.Add(item);
             return item;
         }
-        public Supplier Read(Guid id)
-        {
+        public Supplier Read(Guid id){
             foreach(Supplier item in _mockDb){
                 if(item.SupplierID == id){
                     return item;
@@ -33,8 +31,7 @@ namespace Rema1000ApiProject.Services{
         public List<Supplier> Read(){
             return _mockDb;
         }
-        public bool Update(Guid id, Supplier supplier)
-        {
+        public bool Update(Guid id, Supplier supplier){
             for(int i = 0; i <= _mockDb.Count(); i++){
                 if(_mockDb[i].SupplierID == id){
                     _mockDb[i] = supplier;
@@ -43,8 +40,7 @@ namespace Rema1000ApiProject.Services{
             }
             return false;
         }
-        public bool Delete(Guid id)
-        {
+        public bool Delete(Guid id){
             for(int i = 0; i <= _mockDb.Count(); i++){
                 if(_mockDb[i].SupplierID == id){
                     _mockDb.RemoveAt(i);
@@ -54,8 +50,7 @@ namespace Rema1000ApiProject.Services{
             return false;
         }
 
-        public bool SaveChanges()
-        {
+        public bool SaveChanges(){
             return (_context.SaveChanges() >= 0);
         }
     }

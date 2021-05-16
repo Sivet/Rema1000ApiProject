@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -34,12 +35,15 @@ namespace Rema1000ApiProject
             services.AddDbContext<Rema1000Context>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IService<Category>, CategorySqlService>();
+            services.AddScoped<ICategoryRead<Category>, CategorySqlService>();
             services.AddScoped<IService<Product>, ProductSqlService>();
-            services.AddScoped<IProduct, ProductSqlService>();
+            services.AddScoped<ICategoryRead<Product>, ProductSqlService>();
             services.AddScoped<IService<Supplier>, SupplierSqlService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Rema1000ApiProject", Version = "v1" });
+                var filePath = Path.Combine(AppContext.BaseDirectory, "Rema1000ApiProject.xml");
+                c.IncludeXmlComments(filePath, includeControllerXmlComments: true);
             });
         }
 

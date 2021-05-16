@@ -8,42 +8,46 @@
             <summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.GetCategories">
-            <summary>Gets the information on the Category of a given name</summary>
-            <returns>Returns a json representation of a Category</returns>
+            <summary>Gets the information on Categories</summary>
+            <returns>Returns a collection of all Categories</returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.CategoriesController.GetChildCategories(System.Guid)">
+            <remark>Gets the children of a Category, if given 0'ed (00000000-0000-0000-0000-000000000000) Guid will find top parents</remark>
+            <returns>Returns a collection of Categories</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.AddNewCategory(Rema1000ApiProject.Models.Category)">
-            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary>This POST method creates a new Category </summary>
+            <returns>returns the created Category on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.UpdateCategory(System.Guid,Rema1000ApiProject.Models.Category)">
-            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-             <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary> This PUT method updates the Category with the given id </summary>
+             <returns>returns true on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.CategoriesController.DeleteCategory(System.Guid)">
-            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary> This DELETE method deletes the product with the given id </summary>
+            <returns>returns true on success </returns>
         </member>
         <member name="T:Rema1000ApiProject.Controllers.ProductsController">
             <summary>Controller responsible for handling products </summary>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProduct(System.Guid)">
             <summary>Gets the information on the product of a given name</summary>
-            <returns>Returns a json representation of a Product</returns>
+            <returns>Returns a Product</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByCategory(System.String)">
-            <summary>Gets the all products of the given ProductType</summary>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByCategory(System.Guid)">
+            <summary>Gets the all products of the given Category</summary>
             <returns>Returns a collection of Products</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.AddNewProduct(Rema1000ApiProject.Models.Product)">
-            <summary> This POST method creates a new Product </summary>
+            <summary>This POST method creates a new Product </summary>
             <returns>returns the created product on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.UpdateProduct(System.Guid,Rema1000ApiProject.Models.Product)">
-            <summary> This PUT method updates the product with the given id </summary>
+            <summary>This PUT method updates the product with the given id </summary>
              <returns>returns true on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.DeleteProduct(System.Guid)">
-            <summary> This DELETE method deletes the product with the given id </summary>
+            <summary>This DELETE method deletes the product with the given id </summary>
             <returns>returns true on success </returns>
         </member>
         <member name="T:Rema1000ApiProject.Controllers.SuppliersController">
@@ -58,16 +62,16 @@
             <returns>Returns a collection of all Suppliers</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SuppliersController.AddNewSupplier(Rema1000ApiProject.Models.Supplier)">
-            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary>This POST method creates a new Supplier </summary>
+            <returns>returns the created Supplier on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SuppliersController.UpdateSupplier(System.Guid,Rema1000ApiProject.Models.Supplier)">
-            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-             <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary>This PUT method updates the Supplier with the given id </summary>
+             <returns>returns true on success </returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SuppliersController.DeleteSupplier(System.Guid)">
-            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+            <summary>This DELETE method deletes the Supplier with the given id </summary>
+            <returns>returns true on success </returns>
         </member>
     </members>
 </doc>

@@ -8,15 +8,14 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Rema1000ApiProject.Services{
-    public class ProductSqlService : IService<Product>, IProduct{
+    public class ProductSqlService : IService<Product>, ICategoryRead<Product>{
         private readonly Rema1000Context _context;
         private static List<Product> _mockDb = new List<Product>();
 
         public ProductSqlService(Rema1000Context context){
             _context = context;
         }
-        public Product Create(Product item)
-        {
+        public Product Create(Product item){
             _mockDb.Add(item);
             return item;
         }
@@ -29,10 +28,10 @@ namespace Rema1000ApiProject.Services{
             }
             return new Product();
         }
-        public List<Product> Read(string categoryName){
+        public List<Product> ReadByCatogry(Guid categoryID){
             List<Product> temp = new List<Product>();
             foreach(Product item in _mockDb){
-                if(item.ProductCategory.CategoryName == categoryName){
+                if(item.ProductCategory.CategoryID == categoryID){
                     temp.Add(item);
                 }
             }
@@ -41,8 +40,7 @@ namespace Rema1000ApiProject.Services{
         public List<Product> Read(){
             return _mockDb;
         }
-        public bool Update(Guid id, Product product)
-        {
+        public bool Update(Guid id, Product product){
             for(int i = 0; i <= _mockDb.Count(); i++){
                 if(_mockDb[i].ProductID == id){
                     _mockDb[i] = product;
@@ -51,8 +49,7 @@ namespace Rema1000ApiProject.Services{
             }
             return false;
         }
-        public bool Delete(Guid id)
-        {
+        public bool Delete(Guid id){
             for(int i = 0; i <= _mockDb.Count(); i++){
                 if(_mockDb[i].ProductID == id){
                     _mockDb.RemoveAt(i);
@@ -61,8 +58,7 @@ namespace Rema1000ApiProject.Services{
             }
             return false;
         }
-        public bool SaveChanges()
-        {
+        public bool SaveChanges(){
             return (_context.SaveChanges() >= 0);
         }
     }

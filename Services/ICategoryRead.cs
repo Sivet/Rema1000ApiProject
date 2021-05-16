@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Rema1000ApiProject.Models;
 
 namespace Rema1000ApiProject.Services{
-    public interface IProduct{
-        List<Product> Read(string typeName);
+    public interface ICategoryRead<T>{
+        List<T> ReadByCatogry(Guid categoryID);
     }
 }
