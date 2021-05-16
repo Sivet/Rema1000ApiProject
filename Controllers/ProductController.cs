@@ -12,10 +12,12 @@ namespace Rema1000ApiProject.Controllers{
     [ApiController]
     [Route("api/[controller]")]
     //[Route("[action]")]
-    public class ProductController : ControllerBase{
+    public class ProductsController : ControllerBase{
         IService<Product> _service;
-        public ProductController(IService<Product> service){
+        IProduct _productService;
+        public ProductsController(IService<Product> service, IProduct productService){
             _service = service;
+            _productService = productService;
         }
 
         ///<summary>Gets the information on the product of a given name</summary>
@@ -25,46 +27,38 @@ namespace Rema1000ApiProject.Controllers{
             //throw new NotImplementedException();
             return Ok(_service.Read(id));
         }
-        ///<summary>Gets the all products of a given type</summary>
-        ///<returns>Returns a collection of all Products of the given type</returns>
-        [HttpGet("type/{type}")]
-        public IEnumerable<Product> GetProductsByType(ProductType type){
-            throw new NotImplementedException();
+        ///<summary>Gets the all products of the given ProductType</summary>
+        ///<returns>Returns a collection of Products</returns>
+        [HttpGet("typeName/{type}")]
+        public ActionResult<IEnumerable<Product>> GetProductsByType(string typeName){
+            //throw new NotImplementedException();
+            return Ok(_productService.Read(typeName));
         }
-        /// <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
+        /// <summary> This POST method creates a new Product </summary>
+        /// <returns>returns the created product on success </returns>
         [HttpPost]
-        public Product AddNewProduct(Product product)
+        public ActionResult<Product> AddNewProduct(Product product)
         {
-            /*_service.CreateMakerSpace(createDto);
-            //Check if valid
-            return Created($"api/MakerSpaces", null);//CreatedAtRoute(nameof(GetMakerSpaceById), new { Id = makerSpaceReadDto.Id }, makerSpaceReadDto);*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Ok(_service.Create(product));
         }
-        ///<summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
+        ///<summary> This PUT method updates the product with the given id </summary>
+        /// <returns>returns true on success </returns>
         [HttpPut("{id}")]
         public ActionResult UpdateProduct(Guid id, Product product)
         {
-            /*if (_service.UpdateMakerSpace(id, MakerSpaceCreateDto) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Update(id, product)) return NotFound();
+            return NoContent();
         }
-
-        /// <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-        /// <returns>returns IS NOT YET IMPLEMENTED </returns>
+        /// <summary> This DELETE method deletes the product with the given id </summary>
+        /// <returns>returns true on success </returns>
         [HttpDelete("{id}")]
         public ActionResult DeleteProduct(Guid id)
         {
-            /*if (_service.DeleteMakerSpace(id) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Delete(id)) return NotFound();
+            return NoContent();
         }
     }
 }

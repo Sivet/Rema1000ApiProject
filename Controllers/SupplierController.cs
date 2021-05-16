@@ -20,31 +20,34 @@ namespace Rema1000ApiProject.Controllers{
 
         ///<summary>Gets the information on the Supplier of a given name</summary>
         ///<returns>Returns a json representation of a Supplier</returns>
-        [HttpGet]
-        public Supplier GetSupplier(Guid id){
-            throw new NotImplementedException();
+        [HttpGet("{id}")]
+        public ActionResult<Supplier> GetSupplier(Guid id){
+            //throw new NotImplementedException();
+            return Ok(_service.Read(id));
+        }
+        ///<summary>Gets the all Suppliers</summary>
+        ///<returns>Returns a collection of all Suppliers</returns>
+        [HttpGet()]
+        public ActionResult<IEnumerable<Supplier>> GetSuppliers(){
+            //throw new NotImplementedException();
+            return Ok(_service.Read());
         }
         /// <summary> This POST method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPost]
-        public Supplier AddNewSupplier(Supplier supplier)
+        public ActionResult<Supplier> AddNewSupplier(Supplier supplier)
         {
-            /*_service.CreateMakerSpace(createDto);
-            //Check if valid
-            return Created($"api/MakerSpaces", null);//CreatedAtRoute(nameof(GetMakerSpaceById), new { Id = makerSpaceReadDto.Id }, makerSpaceReadDto);*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Ok(_service.Create(supplier));
         }
         ///<summary> This PUT method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPut("{id}")]
         public ActionResult UpdateSupplier(Guid id, Supplier supplier)
         {
-            /*if (_service.UpdateMakerSpace(id, MakerSpaceCreateDto) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Update(id, supplier)) return NotFound();
+            return NoContent();
         }
 
         /// <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
@@ -52,12 +55,9 @@ namespace Rema1000ApiProject.Controllers{
         [HttpDelete("{id}")]
         public ActionResult DeleteSupplier(Guid id)
         {
-            /*if (_service.DeleteMakerSpace(id) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Delete(id)) return NotFound();
+            return NoContent();
         }
     }
 }

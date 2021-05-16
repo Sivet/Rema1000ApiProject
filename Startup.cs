@@ -36,6 +36,7 @@ namespace Rema1000ApiProject
             services.AddScoped<IService<Category>, CategorySqlService>();
             services.AddScoped<IService<ProductType>, ProductTypeSqlService>();
             services.AddScoped<IService<Product>, ProductSqlService>();
+            services.AddScoped<IProduct, ProductSqlService>();
             services.AddScoped<IService<Supplier>, SupplierSqlService>();
             services.AddSwaggerGen(c =>
             {

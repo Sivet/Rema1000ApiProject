@@ -23,28 +23,32 @@
             <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
-        <member name="T:Rema1000ApiProject.Controllers.ProductController">
+        <member name="T:Rema1000ApiProject.Controllers.ProductsController">
             <summary>Controller responsible for handling products </summary>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductController.GetProduct(System.Guid)">
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProduct(System.Guid)">
             <summary>Gets the information on the product of a given name</summary>
             <returns>Returns a json representation of a Product</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductController.GetProductsByType(Rema1000ApiProject.Models.ProductType)">
-            <summary>Gets the information on products of a given type</summary>
-            <returns>Returns a collection of all Products of the given type</returns>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByType(System.String)">
+            <summary>Gets the all products</summary>
+            <returns>Returns a collection of all Products</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductController.AddNewProduct(Rema1000ApiProject.Models.Product)">
-            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProducts">
+            <summary>Gets the all products</summary>
+            <returns>Returns a collection of all Products</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductController.UpdateProduct(System.Guid,Rema1000ApiProject.Models.Product)">
-            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-             <returns>returns IS NOT YET IMPLEMENTED </returns>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.AddNewProduct(Rema1000ApiProject.Models.Product)">
+            <summary> This POST method creates a new Product </summary>
+            <returns>returns the created product on success </returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductController.DeleteProduct(System.Guid)">
-            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.UpdateProduct(System.Guid,Rema1000ApiProject.Models.Product)">
+            <summary> This PUT method updates the product with the given id </summary>
+             <returns>returns true on success </returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.DeleteProduct(System.Guid)">
+            <summary> This DELETE method deletes the product with the given id </summary>
+            <returns>returns true on success </returns>
         </member>
         <member name="T:Rema1000ApiProject.Controllers.ProductTypesController">
             <summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
@@ -71,6 +75,10 @@
         <member name="M:Rema1000ApiProject.Controllers.SupplierController.GetSupplier(System.Guid)">
             <summary>Gets the information on the Supplier of a given name</summary>
             <returns>Returns a json representation of a Supplier</returns>
+        </member>
+        <member name="M:Rema1000ApiProject.Controllers.SupplierController.GetSuppliers">
+            <summary>Gets the all Suppliers</summary>
+            <returns>Returns a collection of all Suppliers</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SupplierController.AddNewSupplier(Rema1000ApiProject.Models.Supplier)">
             <summary> This POST method IS NOT YET IMPLEMENTED </summary>

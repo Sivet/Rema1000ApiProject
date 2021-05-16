@@ -20,30 +20,26 @@ namespace Rema1000ApiProject.Controllers{
         ///<summary>Gets the information on the Category of a given name</summary>
         ///<returns>Returns a json representation of a Category</returns>
         [HttpGet]
-        public IEnumerable<ProductType> GetProductTypes(){
-            throw new NotImplementedException();
+        public ActionResult<IEnumerable<ProductType>> GetProductTypes(){
+            //throw new NotImplementedException();
+            return Ok(_service.Read());
         }
         /// <summary> This POST method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPost]
-        public ProductType AddNewProductType(ProductType productType)
+        public ActionResult<ProductType> AddNewProductType(ProductType productType)
         {
-            /*_service.CreateMakerSpace(createDto);
-            //Check if valid
-            return Created($"api/MakerSpaces", null);//CreatedAtRoute(nameof(GetMakerSpaceById), new { Id = makerSpaceReadDto.Id }, makerSpaceReadDto);*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return Ok(_service.Create(productType));
         }
         ///<summary> This PUT method IS NOT YET IMPLEMENTED </summary>
         /// <returns>returns IS NOT YET IMPLEMENTED </returns>
         [HttpPut("{id}")]
         public ActionResult UpdateProductType(Guid id, ProductType productType)
         {
-            /*if (_service.UpdateMakerSpace(id, MakerSpaceCreateDto) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Update(id, productType)) return NotFound();
+            return NoContent();
         }
 
         /// <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
@@ -51,12 +47,9 @@ namespace Rema1000ApiProject.Controllers{
         [HttpDelete("{id}")]
         public ActionResult DeleteProductType(Guid id)
         {
-            /*if (_service.DeleteMakerSpace(id) == false)
-            {
-                return NotFound();
-            }
-            return NoContent();*/
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if(!_service.Delete(id)) return NotFound();
+            return NoContent();
         }
     }
 }
