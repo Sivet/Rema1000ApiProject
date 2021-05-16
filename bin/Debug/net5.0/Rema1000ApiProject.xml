@@ -31,12 +31,8 @@
             <returns>Returns a json representation of a Product</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByType(System.String)">
-            <summary>Gets the all products</summary>
-            <returns>Returns a collection of all Products</returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProducts">
-            <summary>Gets the all products</summary>
-            <returns>Returns a collection of all Products</returns>
+            <summary>Gets the all products of the given ProductType</summary>
+            <returns>Returns a collection of Products</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.ProductsController.AddNewProduct(Rema1000ApiProject.Models.Product)">
             <summary> This POST method creates a new Product </summary>

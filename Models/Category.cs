@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -10,5 +11,6 @@ namespace Rema1000ApiProject.Models
         [Required]
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
+        public List<ProductType> ProductTypes { get; set; }
     }
 }
