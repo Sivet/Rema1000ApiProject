@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rema1000ApiProject.Context;
 
 namespace Rema1000ApiProject.Migrations
 {
     [DbContext(typeof(Rema1000Context))]
-    partial class Rema1000ContextModelSnapshot : ModelSnapshot
+    [Migration("20210516170304_removedListofProducts")]
+    partial class removedListofProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +123,7 @@ namespace Rema1000ApiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("GrossPrice")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid?>("ProductCategoryCategoryID")
@@ -136,9 +138,6 @@ namespace Rema1000ApiProject.Migrations
 
                     b.Property<Guid?>("ProductSupplierSupplierID")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("SalesPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid?>("UnitMeasurementUnitID")
                         .HasColumnType("uniqueidentifier");

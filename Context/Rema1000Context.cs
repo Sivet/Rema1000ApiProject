@@ -12,7 +12,6 @@ namespace Rema1000ApiProject.Context{
             
         }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<MeasurementUnit> MeasurementUnits { get; set; }
         public DbSet<ContactPerson> ContactPeople { get; set; }

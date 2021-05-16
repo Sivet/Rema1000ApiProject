@@ -30,7 +30,7 @@
             <summary>Gets the information on the product of a given name</summary>
             <returns>Returns a json representation of a Product</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByType(System.String)">
+        <member name="M:Rema1000ApiProject.Controllers.ProductsController.GetProductsByCategory(System.String)">
             <summary>Gets the all products of the given ProductType</summary>
             <returns>Returns a collection of Products</returns>
         </member>
@@ -46,45 +46,26 @@
             <summary> This DELETE method deletes the product with the given id </summary>
             <returns>returns true on success </returns>
         </member>
-        <member name="T:Rema1000ApiProject.Controllers.ProductTypesController">
-            <summary>Controller responsible for handling Categories and their subdivision ProductTypes</summary>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.GetProductTypes">
-            <summary>Gets the information on the Category of a given name</summary>
-            <returns>Returns a json representation of a Category</returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.AddNewProductType(Rema1000ApiProject.Models.ProductType)">
-            <summary> This POST method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.UpdateProductType(System.Guid,Rema1000ApiProject.Models.ProductType)">
-            <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
-             <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="M:Rema1000ApiProject.Controllers.ProductTypesController.DeleteProductType(System.Guid)">
-            <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
-            <returns>returns IS NOT YET IMPLEMENTED </returns>
-        </member>
-        <member name="T:Rema1000ApiProject.Controllers.SupplierController">
+        <member name="T:Rema1000ApiProject.Controllers.SuppliersController">
             <summary>Controller responsible for handling Suppliers </summary>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.SupplierController.GetSupplier(System.Guid)">
+        <member name="M:Rema1000ApiProject.Controllers.SuppliersController.GetSupplier(System.Guid)">
             <summary>Gets the information on the Supplier of a given name</summary>
             <returns>Returns a json representation of a Supplier</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.SupplierController.GetSuppliers">
+        <member name="M:Rema1000ApiProject.Controllers.SuppliersController.GetSuppliers">
             <summary>Gets the all Suppliers</summary>
             <returns>Returns a collection of all Suppliers</returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.SupplierController.AddNewSupplier(Rema1000ApiProject.Models.Supplier)">
+        <member name="M:Rema1000ApiProject.Controllers.SuppliersController.AddNewSupplier(Rema1000ApiProject.Models.Supplier)">
             <summary> This POST method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.SupplierController.UpdateSupplier(System.Guid,Rema1000ApiProject.Models.Supplier)">
+        <member name="M:Rema1000ApiProject.Controllers.SuppliersController.UpdateSupplier(System.Guid,Rema1000ApiProject.Models.Supplier)">
             <summary> This PUT method IS NOT YET IMPLEMENTED </summary>
              <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>
-        <member name="M:Rema1000ApiProject.Controllers.SupplierController.DeleteSupplier(System.Guid)">
+        <member name="M:Rema1000ApiProject.Controllers.SuppliersController.DeleteSupplier(System.Guid)">
             <summary> This DELETE method IS NOT YET IMPLEMENTED </summary>
             <returns>returns IS NOT YET IMPLEMENTED </returns>
         </member>

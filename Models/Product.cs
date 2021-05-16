@@ -10,10 +10,11 @@ namespace Rema1000ApiProject.Models
         [Required]
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        public decimal Price { get; set; }
+        public decimal SalesPrice { get; set; }
+        public decimal GrossPrice { get; set; }
         public int UnitsInStock { get; set; }
         public MeasurementUnit Unit { get; set; }
-        public ProductType Type { get; set; }
+        public Category ProductCategory { get; set; }
         public Supplier ProductSupplier { get; set; }
     }
 }

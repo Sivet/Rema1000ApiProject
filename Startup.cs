@@ -34,7 +34,6 @@ namespace Rema1000ApiProject
             services.AddDbContext<Rema1000Context>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IService<Category>, CategorySqlService>();
-            services.AddScoped<IService<ProductType>, ProductTypeSqlService>();
             services.AddScoped<IService<Product>, ProductSqlService>();
             services.AddScoped<IProduct, ProductSqlService>();
             services.AddScoped<IService<Supplier>, SupplierSqlService>();

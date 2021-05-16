@@ -29,10 +29,10 @@ namespace Rema1000ApiProject.Services{
             }
             return new Product();
         }
-        public List<Product> Read(string typeName){
+        public List<Product> Read(string categoryName){
             List<Product> temp = new List<Product>();
             foreach(Product item in _mockDb){
-                if(item.Type.ProductTypeName == typeName){
+                if(item.ProductCategory.CategoryName == categoryName){
                     temp.Add(item);
                 }
             }

@@ -29,10 +29,10 @@ namespace Rema1000ApiProject.Controllers{
         }
         ///<summary>Gets the all products of the given ProductType</summary>
         ///<returns>Returns a collection of Products</returns>
-        [HttpGet("typeName/{type}")]
-        public ActionResult<IEnumerable<Product>> GetProductsByType(string typeName){
+        [HttpGet("category/{type}")]
+        public ActionResult<IEnumerable<Product>> GetProductsByCategory(string categoryName){
             //throw new NotImplementedException();
-            return Ok(_productService.Read(typeName));
+            return Ok(_productService.Read(categoryName));
         }
         /// <summary> This POST method creates a new Product </summary>
         /// <returns>returns the created product on success </returns>

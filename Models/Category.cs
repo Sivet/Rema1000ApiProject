@@ -7,10 +7,10 @@ namespace Rema1000ApiProject.Models
 {
     public class Category{
         [Key]
-        public Guid CategoryID {get; set;}
+        public Guid CategoryID { get; set; }
         [Required]
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
-        public List<ProductType> ProductTypes { get; set; }
+        public Category ParentCategory { get; set; }
     }
 }

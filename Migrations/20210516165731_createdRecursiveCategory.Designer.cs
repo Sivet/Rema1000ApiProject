@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rema1000ApiProject.Context;
 
 namespace Rema1000ApiProject.Migrations
 {
     [DbContext(typeof(Rema1000Context))]
-    partial class Rema1000ContextModelSnapshot : ModelSnapshot
+    [Migration("20210516165731_createdRecursiveCategory")]
+    partial class createdRecursiveCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +123,7 @@ namespace Rema1000ApiProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("GrossPrice")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid?>("ProductCategoryCategoryID")
@@ -137,8 +139,8 @@ namespace Rema1000ApiProject.Migrations
                     b.Property<Guid?>("ProductSupplierSupplierID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("SalesPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<Guid?>("ProductTypeID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("UnitMeasurementUnitID")
                         .HasColumnType("uniqueidentifier");
@@ -152,9 +154,34 @@ namespace Rema1000ApiProject.Migrations
 
                     b.HasIndex("ProductSupplierSupplierID");
 
+                    b.HasIndex("ProductTypeID");
+
                     b.HasIndex("UnitMeasurementUnitID");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Rema1000ApiProject.Models.ProductType", b =>
+                {
+                    b.Property<Guid>("ProductTypeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ProductTypeCategoryCategoryID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProductTypeDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductTypeID");
+
+                    b.HasIndex("ProductTypeCategoryCategoryID");
+
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("Rema1000ApiProject.Models.Supplier", b =>
@@ -202,12 +229,16 @@ namespace Rema1000ApiProject.Migrations
             modelBuilder.Entity("Rema1000ApiProject.Models.Product", b =>
                 {
                     b.HasOne("Rema1000ApiProject.Models.Category", "ProductCategory")
-                        .WithMany()
+                        .WithMany("ProductTypeProducts")
                         .HasForeignKey("ProductCategoryCategoryID");
 
                     b.HasOne("Rema1000ApiProject.Models.Supplier", "ProductSupplier")
                         .WithMany("SupplierProducts")
                         .HasForeignKey("ProductSupplierSupplierID");
+
+                    b.HasOne("Rema1000ApiProject.Models.ProductType", null)
+                        .WithMany("ProductTypeProducts")
+                        .HasForeignKey("ProductTypeID");
 
                     b.HasOne("Rema1000ApiProject.Models.MeasurementUnit", "Unit")
                         .WithMany()
@@ -218,6 +249,25 @@ namespace Rema1000ApiProject.Migrations
                     b.Navigation("ProductSupplier");
 
                     b.Navigation("Unit");
+                });
+
+            modelBuilder.Entity("Rema1000ApiProject.Models.ProductType", b =>
+                {
+                    b.HasOne("Rema1000ApiProject.Models.Category", "ProductTypeCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeCategoryCategoryID");
+
+                    b.Navigation("ProductTypeCategory");
+                });
+
+            modelBuilder.Entity("Rema1000ApiProject.Models.Category", b =>
+                {
+                    b.Navigation("ProductTypeProducts");
+                });
+
+            modelBuilder.Entity("Rema1000ApiProject.Models.ProductType", b =>
+                {
+                    b.Navigation("ProductTypeProducts");
                 });
 
             modelBuilder.Entity("Rema1000ApiProject.Models.Supplier", b =>

@@ -12,9 +12,9 @@ namespace Rema1000ApiProject.Controllers{
     [ApiController]
     [Route("api/[controller]")]
     //[Route("[action]")]
-    public class SupplierController : ControllerBase{
+    public class SuppliersController : ControllerBase{
         IService<Supplier> _service;
-        public SupplierController(IService<Supplier> service){
+        public SuppliersController(IService<Supplier> service){
             _service = service;
         }
 
