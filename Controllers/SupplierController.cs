@@ -18,7 +18,7 @@ namespace Rema1000ApiProject.Controllers{
             _service = service;
         }
 
-        ///<summary>Gets the information on the Supplier of a given name</summary>
+        ///<summary>Gets the information on the Supplier of a given id</summary>
         ///<returns>Returns a json representation of a Supplier</returns>
         [HttpGet("{id}")]
         public ActionResult<Supplier> GetSupplier(Guid id){

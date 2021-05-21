@@ -13,6 +13,7 @@ namespace Rema1000ApiProject.Models
         public decimal SalesPrice { get; set; }
         public decimal GrossPrice { get; set; }
         public int UnitsInStock { get; set; }
+        public int MeasurementValue { get; set; }
         public MeasurementUnit Unit { get; set; }
         public Category ProductCategory { get; set; }
         public Supplier ProductSupplier { get; set; }
