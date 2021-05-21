@@ -11,6 +11,6 @@ namespace Rema1000ApiProject.Models
         [Required]
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
-        public Category ParentCategory { get; set; }
+        public Nullable<Guid> ParentCategory { get; set; }
     }
 }

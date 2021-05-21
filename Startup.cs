@@ -55,11 +55,6 @@ namespace Rema1000ApiProject
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rema1000ApiProject v1"));
-                //Sets swagger as the root URL
-                /*app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rema1000ApiProject v1");
-                    c.RoutePrefix = string.Empty;
-                });*/
             }
 
             app.UseHttpsRedirection();

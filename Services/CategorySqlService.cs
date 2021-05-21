@@ -30,7 +30,7 @@ namespace Rema1000ApiProject.Services{
             //"00000000-0000-0000-0000-000000000000" represents Null which is set as allowed on the uniqueidentyfier in db
             List<Category> temp = new List<Category>();
             foreach(Category item in _mockDb){
-                if(item.ParentCategory.CategoryID == id){
+                if(item.ParentCategory == id){
                     temp.Add(item);
                 }
             }
