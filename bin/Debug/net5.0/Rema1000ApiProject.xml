@@ -54,7 +54,7 @@
             <summary>Controller responsible for handling Suppliers </summary>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SuppliersController.GetSupplier(System.Guid)">
-            <summary>Gets the information on the Supplier of a given name</summary>
+            <summary>Gets the information on the Supplier of a given id</summary>
             <returns>Returns a json representation of a Supplier</returns>
         </member>
         <member name="M:Rema1000ApiProject.Controllers.SuppliersController.GetSuppliers">
